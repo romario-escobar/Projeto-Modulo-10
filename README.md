@@ -9,14 +9,15 @@ Projeto Integrador desenvolvido para a disciplina de **Programação Orientada a
 ```
 Modulo10/
 └── src/
-    ├── missao1/   Interfaces, instanceof e Casting
-    ├── missao2/   List, LinkedList e Vector
-    ├── missao3/   Set, HashSet e Iterator
-    ├── missao4/   TreeSet, Comparable e Comparator
-    └── missao5/   Map e HashMap
+    ├── missao1/               Interfaces, instanceof e Casting
+    ├── missao2/               List, LinkedList e Vector
+    ├── missao3/                Set, HashSet e Iterator
+    ├── missao4/                TreeSet, Comparable e Comparator
+    ├── missao5/                Map e HashMap
+    └── exercicioComplementar/  SortedSet (subSet/headSet/tailSet), Queue, Collections, Hashtable/Enumeration
 ```
 
-Cada missão é um pacote Java independente, com sua própria classe `Main` para execução e teste.
+Cada missão e o exercício complementar são pacotes Java independentes, cada um com sua própria classe `Main` para execução e teste.
 
 ## 🚀 Missões
 
@@ -45,6 +46,16 @@ Módulo de PDV (Ponto de Venda) com consulta instantânea de produtos via códig
 
 **Conceitos:** `Map` · `HashMap` · `keySet()` · `values()`
 
+### Exercício Complementar — Recursos Utilitários e Legados da Collection Framework
+Aplicação única integrando quatro tópicos avançados de coleções: consultas por faixa de preço em um catálogo ordenado (`SortedSet`), gerenciamento de uma fila de atendimento (`Queue`), utilitários estáticos de manipulação de listas (`Collections`) e simulação de sessões ativas com a estrutura legada `Hashtable`.
+
+- **`ConsultaCatalogoPrecos`** — usa `subSet`, `headSet` e `tailSet` de um `TreeSet<Produto>` (ordenado por preço) para consultar faixas específicas do catálogo.
+- **`FilaAtendimento`** — gerencia uma fila de pedidos usando exclusivamente `offer()`, `peek()` e `poll()`, evitando as exceções que `add()`/`remove()`/`element()` lançariam em situações-limite.
+- **`UtilitariosEstoque`** — demonstra `Collections.shuffle()`, `Collections.reverse()`, `Collections.min()`/`max()` e o encapsulamento de uma lista com `Collections.synchronizedList()`.
+- **`SessaoAtiva`** — simula uma tabela de sessões ativas com `Hashtable<String, String>`, percorrida com `Enumeration` (`hasMoreElements()`/`nextElement()`), a forma clássica de navegação anterior ao `Iterator`.
+
+**Conceitos:** `SortedSet` (sub-faixas) · `Queue` · `Collections` (utilitários estáticos) · `Hashtable` · `Enumeration`
+
 ## ▶️ Como executar
 
 Cada missão pode ser executada de forma independente, rodando a classe `Main` correspondente:
@@ -56,7 +67,7 @@ javac missao1/*.java
 java missao1.Main
 ```
 
-Repita o processo trocando `missao1` pela missão desejada (`missao2`, `missao3`, `missao4` ou `missao5`).
+Repita o processo trocando `missao1` pela missão desejada (`missao2`, `missao3`, `missao4`, `missao5` ou `exercicioComplementar`).
 
 > A Missão 5 espera uma entrada via teclado (código do produto) — execute pelo terminal para digitar a consulta.
 
